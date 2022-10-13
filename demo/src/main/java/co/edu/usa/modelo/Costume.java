@@ -86,9 +86,5 @@ public class Costume implements Serializable {
     public void setCategory(Category category) {
         this.category = category;
     }
-
-
-
-    
     
 }

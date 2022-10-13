@@ -55,6 +55,9 @@ public class CostumeServicio {
                 if (costume.getBrand()!= null){
                     e.get().setBrand(costume.getBrand());
                 }
+                if (costume.getDescription()!= null){
+                    e.get().setDescription(costume.getDescription());
+                }
                 if (costume.getYear()!= null){
                     e.get().setYear(costume.getYear());
                 }

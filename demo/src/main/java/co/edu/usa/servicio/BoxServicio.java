@@ -48,29 +48,35 @@ private BoxRepository boxRepository;
   
     //////// RETO 4 
   
-//public Box update(Box box){
-//        if(box.getBoxId()!=null){
-//            Optional<Box> e= boxRepository.getBox(box.getBoxId());
-//            if(!e.isEmpty()){
-//
-//                if(box.getStartDate()!=null){
-//                    e.get().setStartDate(box.getStartDate());
-//                }
-//                if(box.getDevolutionDate()!=null){
-//                    e.get().setDevolutionDate(box.getDevolutionDate());
-//                }
-//                if(box.getStatus()!=null){
-//                    e.get().setStatus(box.getStatus());
-//                }
-//                boxRepository.save(e.get());
-//                return e.get();
-//            }else{
-//                return box;
-//            }
-//        }else{
-//            return box;
-//        }
-//    }
+public Box update(Box box){
+        if(box.getId()!=null){
+            Optional<Box> e=boxRepository.getBox(box.getId());
+            if(!e.isEmpty()){
+                if(box.getName()!=null){
+                    e.get().setName(box.getName());
+                }
+                if(box.getLocation()!=null){
+                    e.get().setLocation(box.getLocation());
+                }
+                if(box.getCapacity()!=null){
+                    e.get().setCapacity(box.getCapacity());
+                }
+                if(box.getDescription()!=null){
+                    e.get().setDescription(box.getDescription());
+                }
+                if(box.getCategory()!=null){
+                    e.get().setCategory(box.getCategory());
+                }
+                boxRepository.save(e.get());
+                return e.get();
+            }else{
+                return box;
+            }
+        }else{
+            return box;
+        }
+    }
+
 
  public boolean deleteBox(int boxId){
         Boolean d=getBox(boxId).map(box -> {

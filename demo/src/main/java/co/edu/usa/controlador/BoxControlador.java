@@ -52,11 +52,11 @@ public class BoxControlador {
       
 //////// RETO 4       
       
-//    @PutMapping("/update")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Box update(@RequestBody Box box) {
-//        return boxServicio.update(box);
-//    }
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Box update(@RequestBody Box box) {
+        return boxServicio.update(box);
+    }
     
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
