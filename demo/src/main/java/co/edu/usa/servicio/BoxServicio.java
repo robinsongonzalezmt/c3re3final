@@ -44,49 +44,41 @@ private BoxRepository boxRepository;
        }
  
     }
- /**
-  public Box update (Box box){
-        if (box.getIdBox() != null){
-            Optional<Box> e = boxRepository.getBox(box.getIdBox());
-            if (!e.isEmpty()){
-                if (box.getDescription()!= null){
-                    e.get().setDescription(box.getDescription());
-                }
-                categoryRepository.save(e.get());
-                return e.get();
-            }
-            else
-            {
-                return category;
-            }
-        }
-        else
-        {
-            return category;
-        }
-    }
+
   
-  public boolean deleteCategory (int id){
-   
-      alternativa de Delete
-      Optional<Category> category = categoryRepository.getCategory(id);
-      if (category.isEmpty()){
-          return false;
-      }
-      else 
-      {
-          categoryRepository.delete(category.get());
-          return true;
-      }
-      
-      Boolean aBoolean = getCategory(id).map(
-              category->{
-            categoryRepository.delete(category);
+    //////// RETO 4 
+  
+//public Box update(Box box){
+//        if(box.getBoxId()!=null){
+//            Optional<Box> e= boxRepository.getBox(box.getBoxId());
+//            if(!e.isEmpty()){
+//
+//                if(box.getStartDate()!=null){
+//                    e.get().setStartDate(box.getStartDate());
+//                }
+//                if(box.getDevolutionDate()!=null){
+//                    e.get().setDevolutionDate(box.getDevolutionDate());
+//                }
+//                if(box.getStatus()!=null){
+//                    e.get().setStatus(box.getStatus());
+//                }
+//                boxRepository.save(e.get());
+//                return e.get();
+//            }else{
+//                return box;
+//            }
+//        }else{
+//            return box;
+//        }
+//    }
+
+ public boolean deleteBox(int boxId){
+        Boolean d=getBox(boxId).map(box -> {
+            boxRepository.delete(box);
             return true;
         }).orElse(false);
-        return aBoolean;
-        }
-        */
+        return d;
+    }
    
 }
      

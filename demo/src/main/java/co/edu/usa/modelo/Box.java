@@ -27,7 +27,7 @@ public class Box implements Serializable {
     
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-     private Integer id;
+    private Integer id;
     private String name;
     private String location;
     private Integer capacity;
@@ -48,7 +48,7 @@ public class Box implements Serializable {
     @JsonIgnoreProperties({"box","messages"})
     private List<Reservation> reservations;
 
-   public Integer getId() {
+    public Integer getId() {
         return id;
     }
 

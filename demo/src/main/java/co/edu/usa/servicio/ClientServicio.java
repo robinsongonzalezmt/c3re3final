@@ -42,58 +42,49 @@ public class ClientServicio {
           }
         }
     }
-    
-public Client update(Client client){
-        if(client.getIdClient()!=null){
-            Optional<Client> e= clientRepository.getClient(client.getIdClient());
-            if(!e.isEmpty()){
-                if(client.getName()!=null){
+    public Client update (Client client){
+        if (client.getIdClient() != null){
+            Optional<Client> e = clientRepository.getClient(client.getIdClient());
+            if (!e.isEmpty()){
+                if (client.getName()!= null){
                     e.get().setName(client.getName());
-                }
-                if(client.getAge()!=null){
-                    e.get().setAge(client.getAge());
-                }
-                if(client.getPassword()!=null){
-                    e.get().setPassword(client.getPassword());
                 }
                 clientRepository.save(e.get());
                 return e.get();
-            }else{
+            }
+            else
+            {
                 return client;
             }
-        }else{
+        }
+        else
+        {
             return client;
         }
     }
-
-//    public Client update (Client client){
-//        if (client.getIdClient() != null){
-//            Optional<Client> e = clientRepository.getClient(client.getIdClient());
-//            if (!e.isEmpty()){
-//                if (client.getName()!= null){
-//                    e.get().setName(client.getName());
-//                }
-//                clientRepository.save(e.get());
-//                return e.get();
-//            }
-//            else
-//            {
-//                return client;
-//            }
-//        }
-//        else
-//        {
-//            return client;
-//        }
-//    }
   
-  public boolean deleteClient (int clientId){
+  public boolean deleteClient (int id){
    
-    Boolean d=getClient(clientId).map(client -> {
-        clientRepository.delete(client);
+      /** alternativa de Delete
+      Optional<Category> category = categoryRepository.getCategory(id);
+      if (category.isEmpty()){
+          return false;
+      }
+      else 
+      {
+          categoryRepository.delete(category.get());
+          return true;
+      }
+      */
+      
+      Boolean aBoolean = getClient(id).map(
+              client->{
+            clientRepository.delete(client);
             return true;
         }).orElse(false);
-        return d;
+        return aBoolean;
+   
     }
 }
+
 

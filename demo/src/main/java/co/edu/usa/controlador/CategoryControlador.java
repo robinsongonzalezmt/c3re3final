@@ -49,14 +49,14 @@ public class CategoryControlador {
           return categoryServicio.save(category);};
 
 
-//    @PutMapping("/update")
-//    @ResponseStatus(HttpStatus.CREATED ) 
-//      public Category update(@RequestBody Category category) {
-//          return categoryServicio.update(category);};
-//
-//
-//    @DeleteMapping("/{id}")
-//      public void delete(@PathVariable("id") int categoryId) {categoryServicio.deleteCategory(categoryId);};
-//      
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED ) 
+      public Category update(@RequestBody Category category) {
+          return categoryServicio.update(category);};
+
+
+    @DeleteMapping("/{id}")
+      public void delete(@PathVariable("id") int categoryId) {categoryServicio.deleteCategory(categoryId);};
+      
 
 }
