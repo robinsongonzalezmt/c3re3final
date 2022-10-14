@@ -44,26 +44,43 @@ public class CategoryServicio {
  
     }
 
-  public Category update (Category category){
-        if (category.getId() != null){
-            Optional<Category> e = categoryRepository.getCategory(category.getId());
-            if (!e.isEmpty()){
-                if (category.getDescription()!= null){
-                    e.get().setDescription(category.getDescription());
+//  public Category update (Category category){
+//        if (category.getId() != null){
+//            Optional<Category> e = categoryRepository.getCategory(category.getId());
+//            if (!e.isEmpty()){
+//                if (category.getDescription()!= null){
+//                    e.get().setDescription(category.getDescription());
+//                }
+//                categoryRepository.save(e.get());
+//                return e.get();
+//            }
+//            else
+//            {
+//                return category;
+//            }
+//        }
+//        else
+//        {
+//            return category;
+//        }
+//    }
+  
+  public Category update(Category category) {
+        if (category.getId() != null) {
+            Optional<Category> g = categoryRepository.getCategory(category.getId ());
+            if (!g.isEmpty()) {
+                if (category.getDescription() != null) {
+                    g.get().setDescription(category.getDescription());
                 }
-                categoryRepository.save(e.get());
-                return e.get();
-            }
-            else
-            {
-                return category;
+                if (category.getName() != null) {
+                    g.get().setName(category.getName());
+                }
+                return categoryRepository.save(g.get());
             }
         }
-        else
-        {
-            return category;
-        }
+        return category;
     }
+
   
   public boolean deleteCategory (int id){
    
