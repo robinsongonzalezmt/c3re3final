@@ -47,14 +47,15 @@ public class MessageControlador {
           return messageServicio.save(message);
       } 
       
-      
+//      }
 //    @PutMapping("/update")
 //    @ResponseStatus(HttpStatus.CREATED ) 
-//      public Category update(@RequestBody Box box) {
-//          return categoryServicio.update(box);};
+//    public Message update(@RequestBody Message message) {
+//        return messageServicio.update(message);};
 //
 //
 //    @DeleteMapping("/{id}")
-//      public void delete(@PathVariable("id") int categoryId) {categoryServicio.deleteCategory(categoryId);};
-//     
+//    @ResponseStatus(HttpStatus.NO_CONTENT)
+//    public boolean delete(@PathVariable("id") int messageId){ 
+//        return messageServicio.deleteMessage(messageId);
 }

@@ -51,17 +51,18 @@ public class CostumeControlador {
 
       //@CrossOrigin(origins = "http://132.226.240.254")
     
-//          @PutMapping("/update")
-//      @ResponseStatus(HttpStatus.CREATED) 
-//      public Costume update(@RequestBody Costume costume) {return costumeServicio.update(costume);};
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED) 
+    public Costume update(@RequestBody Costume costume) {
+    return costumeServicio.update(costume);};
 //
 ////            @CrossOrigin(origins = "http://132.226.240.254")
-//
-//      @DeleteMapping("/{id}")
-//      @ResponseStatus(HttpStatus.NO_CONTENT) 
-//      public void delete(@PathVariable("id") int costumeId) {
-//          costumeServicio.deleteCostume(costumeId);
-//      }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT) 
+    public boolean delete(@PathVariable("id") int costumeId) {
+        return costumeServicio.deleteCostume(costumeId);
+    }
 
     
 }

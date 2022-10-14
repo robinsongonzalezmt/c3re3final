@@ -43,48 +43,47 @@ public class MessageServicio {
        }
  
     }
-/**
-  public Message update (Message message){
-        if (message.getIdMessage() != null){
-            Optional<Message> e = messageRepository.getMessage(message.getIdMessage());
-            if (!e.isEmpty()){
-                if (message.getDescription()!= null){
-                    e.get().setDescription(message.getDescription());
-                }
-                messageRepository.save(e.get());
-                return e.get();
-            }
-            else
-            {
-                return message;
-            }
-        }
-        else
-        {
-            return message;
-        }
-    }
 
-  public boolean deleteMessage (int id){
+//  public Message update (Message message){
+//        if (message.getIdMessage() != null){
+//            Optional<Message> e = messageRepository.getMessage(message.getIdMessage());
+//            if (!e.isEmpty()){
+//                if (message.getMessageText()!= null){
+//                    e.get().setMessageText(message.getMessageText());
+//                }
+//                messageRepository.save(e.get());
+//                return e.get();
+//            }
+//            else
+//            {
+//                return message;
+//            }
+//        }
+//        else
+//        {
+//            return message;
+//        }
+//        }
+
+//  public boolean deleteMessage (int id){
    
-      /** alternativa de Delete
-      Optional<Category> category = categoryRepository.getCategory(id);
-      if (category.isEmpty()){
-          return false;
-      }
-      else 
-      {
-          categoryRepository.delete(category.get());
-          return true;
-      }
-      
-      
-    Boolean aBoolean = getMessage(id).map(
-              category->{
-            messageRepository.delete(message);
-            return true;
-        }).orElse(false);
-        return aBoolean;
-    */
+//      /** alternativa de Delete
+//      Optional<Category> category = categoryRepository.getCategory(id);
+//      if (category.isEmpty()){
+//          return false;
+//      }
+//      else 
+//      {
+//          categoryRepository.delete(category.get());
+//          return true;
+//      }
+//      
+//     */ 
+//    Boolean aBoolean = getMessage(id).map(
+//              message->{
+//            messageRepository.delete(message);
+//            return true;
+//        }).orElse(false);
+//        return aBoolean;
+
 }
-        

@@ -57,6 +57,17 @@ public class ClientControlador {
 
 
     @DeleteMapping("/{id}")
-      public void delete(@PathVariable("id") int clientId) {clientServicio.deleteClient(clientId);};
- 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int clientId){ 
+        return clientServicio.deleteClient(clientId);
+    }
+      
+
+
 }
+
+//@DeleteMapping("/{id}")
+//    @ResponseStatus(HttpStatus.NO_CONTENT)
+//    public boolean delete(@PathVariable("id") int gamaId) {
+//        return gamaService.deleteGama(gamaId);
+//    }
